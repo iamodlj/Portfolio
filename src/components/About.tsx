@@ -56,7 +56,7 @@ const About = () => {
   const handleDownloadResume = () => {
     // Create a link to the resume file and trigger download
     const link = document.createElement('a');
-    link.href = '/public/RESUME-Abraham Sackey Ohene Gyan.pdf';
+    link.href = '/public/public/RESUME_Abraham_Sackey_Ohene_Gyan.pdf';
     link.download = 'Abraham_Sackey_Ohene_Gyan_Resume.pdf';
     document.body.appendChild(link);
     link.click();
