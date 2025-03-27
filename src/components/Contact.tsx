@@ -86,14 +86,14 @@ const Contact = () => {
               <h4 className="font-semibold mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
+                  href="https://github.com/iamodlj" 
                   className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center hover:bg-black/10 transition-colors"
                   aria-label="GitHub"
                 >
                   <Github size={20} className="text-black/80" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/abraham-sackey-ohene-gyan-5b0682b8/" 
                   className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center hover:bg-black/10 transition-colors"
                   aria-label="LinkedIn"
                 >
