@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <a href="#home" className="text-xl font-display font-semibold">
-              ODLJ<span className="text-black">.</span>
+              ASOG<span className="text-black">.</span>
             </a>
             <p className="text-sm text-black/60 mt-2">
               &copy; {new Date().getFullYear()} All Rights Reserved

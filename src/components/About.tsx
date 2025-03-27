@@ -17,12 +17,12 @@ const skills: Skill[] = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "MongoDB", "Firebase", "SQL"],
+    items: ["Node.js", "Express", "MongoDB", "SQL"],
     icon: <Code size={24} className="text-black/80" />,
   },
   {
     category: "Others",
-    items: ["Git", "UI/UX Design", "Responsive Design", "SEO", "Performance Optimization"],
+    items: ["Git", "PHP", "UI/UX Design", "Responsive Design", "SEO", "Performance Optimization"],
     icon: <UserCheck size={24} className="text-black/80" />,
   },
 ];
