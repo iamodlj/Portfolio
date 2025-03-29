@@ -1,30 +1,61 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Code, Globe, UserCheck } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-interface Skill {
-  category: string;
-  items: string[];
-  icon: JSX.Element;
+interface TechStack {
+  name: string;
+  logo: string;
 }
 
-const skills: Skill[] = [
+const techStacks = [
   {
-    category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
-    icon: <Globe size={24} className="text-black/80" />,
+    name: 'React',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express", "MongoDB", "SQL"],
-    icon: <Code size={24} className="text-black/80" />,
+    name: 'Next.js',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
   },
   {
-    category: "Others",
-    items: ["Git", "PHP", "UI/UX Design", "Responsive Design", "SEO", "Performance Optimization"],
-    icon: <UserCheck size={24} className="text-black/80" />,
+    name: 'TypeScript',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
   },
+  {
+    name: 'Tailwind CSS',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+  },
+  {
+    name: 'Node.js',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+  },
+  {
+    name: 'Express',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
+  },
+  {
+    name: 'MongoDB',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+  },
+  {
+    name: 'HTML5',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+  },
+  {
+    name: 'CSS3',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+  },
+  {
+    name: 'JavaScript',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+  },
+  {
+    name: 'PHP',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+  },
+  {
+    name: 'MySQL',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+  }
 ];
 
 const About = () => {
@@ -114,32 +145,25 @@ const About = () => {
           </div>
           
           <div className="glass rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-8">Skills & Expertise</h3>
+            <h3 className="text-xl font-bold mb-8">Tech Stack</h3>
             
-            <div className="space-y-8">
-              {skills.map((skill, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {techStacks.map((tech, index) => (
                 <div 
-                  key={skill.category}
-                  className={`${isVisible ? 'opacity-0 animate-fade-in' : ''}`}
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  key={tech.name}
+                  className={`group flex flex-col items-center justify-center p-4 rounded-lg bg-black/5 hover:bg-black/10 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+                    isVisible ? 'opacity-0 animate-fade-in' : ''
+                  }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center mr-4">
-                      {skill.icon}
-                    </div>
-                    <h4 className="font-semibold">{skill.category}</h4>
+                  <div className="w-12 h-12 mb-2 transform transition-transform duration-300 group-hover:scale-110">
+                    <img
+                      src={tech.logo}
+                      alt={`${tech.name} logo`}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  
-                  <div className="flex flex-wrap gap-2 ml-14">
-                    {skill.items.map(item => (
-                      <span 
-                        key={item} 
-                        className="px-3 py-1 bg-black/5 rounded-full text-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="text-sm font-medium text-black/70 group-hover:text-black transition-colors duration-300">{tech.name}</span>
                 </div>
               ))}
             </div>
