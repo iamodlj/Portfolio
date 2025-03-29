@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor } from 'lucide-react';
 
@@ -16,72 +15,57 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Web-Based Ghana Vehicle Check",
-    description: "Created a platform allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1600&auto=format&fit=crop",
-    tags: ["PHP", "HTML", "CSS", "JavaScript", "APIs"],
-    link: "#",
+    description: "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks. Serving as my final year project in the university - UPSA",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
+    tags: ["PHP", "HTML", "CSS", "JavaScript", "EmailJS", "AJAX", "GitHub", "Chart.js"],
+    link: "https://github.com/iamodlj/Ghana-Vehicle-Check",
     icon: <Database size={20} className="text-black/80" />,
   },
   {
     id: 2,
     title: "Secure Password Manager",
     description: "A secure password manager implemented in Python. It allows you to store, retrieve, and manage your passwords securely using encryption.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
     tags: ["Python", "Encryption", "Security"],
-    link: "#",
+    link: "https://github.com/iamodlj/password-manager-project",
     icon: <Lock size={20} className="text-black/80" />,
   },
   {
     id: 3,
     title: "Agrisoz",
-    description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
+    description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project.",
+    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600&auto=format&fit=crop",
     tags: ["React", "AI", "Frontend"],
-    link: "#",
+    link: "https://github.com/iamodlj/agrisoz",
     icon: <Sprout size={20} className="text-black/80" />,
   },
   {
     id: 4,
     title: "Website for PrimeTech",
     description: "A responsive, modern website developed for PrimeTech showcasing their services and products.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "#",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop",
+    tags: ["HTML", "CSS", "JavaScript", "Git"],
+    link: "https://iamodlj.github.io/PrimeTech/",
     icon: <Monitor size={20} className="text-black/80" />,
   },
   {
     id: 5,
     title: "Personal Portfolio",
     description: "A showcase of my work and abilities as a developer.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
-    tags: ["HTML", "CSS", "JavaScript"],
+    image: "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=1600&auto=format&fit=crop",
+    tags: ["React", "Vite", "TypeScript", "shadcn-ui", "Tailwind CSS"],
     link: "#",
     icon: <Code size={20} className="text-black/80" />,
   },
   {
     id: 6,
-    title: "E-commerce Platform",
-    description: "A fully functional online shopping experience with cart and checkout.",
-    image: "https://images.unsplash.com/photo-1661956602868-6ae368943878?q=80&w=1600&auto=format&fit=crop",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#",
-  },
-  {
-    id: 7,
     title: "Weather Dashboard",
     description: "Real-time weather information with beautiful visualizations.",
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop",
-    tags: ["JavaScript", "API", "CSS"],
-    link: "#",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1600&auto=format&fit=crop",
+    tags: ["HTML", "JavaScript", "API", "CSS", "GitHub"],
+    link: "https://iamodlj.github.io/weather-app/",
   },
-  {
-    id: 8,
-    title: "Task Management App",
-    description: "Stay organized with this intuitive task tracker.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1600&auto=format&fit=crop",
-    tags: ["React",  "Tailwind"],
-    link: "#",
-  }
+  
 ];
 
 const Projects = () => {

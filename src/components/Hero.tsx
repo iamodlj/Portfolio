@@ -47,7 +47,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-black/70 max-w-2xl mb-10 opacity-0 animate-fade-in animate-delay-300 text-balance">
-            Full-stack developer crafting elegant, intuitive, and functional web applications that solve real problems with simplicity and precision.
+          Web Developer / Software Engineer crafting elegant, intuitive, and functional web applications that solve real problems with simplicity and precision.
           </p>
           
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in animate-delay-400">

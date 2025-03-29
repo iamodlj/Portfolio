@@ -17,12 +17,16 @@ const techStacks = [
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
   },
   {
+    name: 'Vite',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg'
+  },
+  {
     name: 'TypeScript',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
   },
   {
     name: 'Tailwind CSS',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
   },
   {
     name: 'Node.js',
@@ -33,8 +37,8 @@ const techStacks = [
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
   },
   {
-    name: 'MongoDB',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+    name: 'C++',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg'
   },
   {
     name: 'HTML5',
@@ -117,7 +121,7 @@ const About = () => {
               </Avatar>
               <div>
                 <h3 className="font-bold text-xl">Abraham Sackey Ohene Gyan</h3>
-                <p className="text-black/70">Full-stack Developer</p>
+                <p className="text-black/70">Web Developer / Software Engineer</p>
               </div>
             </div>
             
