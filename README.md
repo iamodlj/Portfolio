@@ -54,8 +54,8 @@ This project is built with .
 - Tailwind CSS
 
 ## How can I deploy this project?
-we recommend using Netlify.
+we recommend using vercel
 
 ## I want to use a custom domain - is that possible?
 
-If you want to deploy your project under your own domain then we recommend using Netlify. 
+If you want to deploy your project under your own domain then we recommend using vercel or Netlify. 
