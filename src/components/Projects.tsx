@@ -65,7 +65,15 @@ const projects: Project[] = [
     tags: ["HTML", "JavaScript", "API", "CSS", "GitHub"],
     link: "https://iamodlj.github.io/weather-app/",
   },
-  
+  {
+    id: 7,
+    title: "TicTacToe Game",
+    description: "A classic TicTacToe game with both Player vs Player and Player vs AI modes. Features a modern UI design and smooth animations.",
+    image: "/TicTacToe.png",
+    tags: ["HTML", "CSS", "JavaScript", "Game Development", "Vercel"],
+    link: "https://tictactoe-asog.vercel.app",
+    icon: <Code size={20} className="text-black/80" />,
+  },
 ];
 
 const Projects = () => {
