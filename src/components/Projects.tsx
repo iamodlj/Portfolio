@@ -71,7 +71,7 @@ const projects: Project[] = [
     description: "A classic TicTacToe game with both Player vs Player and Player vs AI modes. Features a modern UI design and smooth animations.",
     image: "/TicTacToe.png",
     tags: ["HTML", "CSS", "JavaScript", "Game Development", "Vercel"],
-    link: "https://tictactoe-asog.vercel.app",
+    link: "https://tic-tac-toc-taupe.vercel.app/",
     icon: <Code size={20} className="text-black/80" />,
   },
 ];
