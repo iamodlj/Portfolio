@@ -25,7 +25,7 @@ const projects: Project[] = [
     id: 2,
     title: "Abokobi Secure Banking Shield",
     description: "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
-    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=1600&auto=format&fit=crop",
+    image: "/abokobi-banking-login.png", // Update to your local image path
     tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
     link: "https://abokobi-secure-banking-shield.vercel.app",
     icon: <ShieldCheck size={20} className="text-black/80" />,
