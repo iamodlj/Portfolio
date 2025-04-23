@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor } from 'lucide-react';
+import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -23,6 +23,15 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Abokobi Secure Banking Shield",
+    description: "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
+    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=1600&auto=format&fit=crop",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    link: "https://abokobi-secure-banking-shield.vercel.app",
+    icon: <ShieldCheck size={20} className="text-black/80" />,
+  },
+  {
+    id: 3,
     title: "Secure Password Manager",
     description: "A secure password manager implemented in Python. It allows you to store, retrieve, and manage your passwords securely using encryption.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
@@ -31,7 +40,7 @@ const projects: Project[] = [
     icon: <Lock size={20} className="text-black/80" />,
   },
   {
-    id: 3,
+    id: 4,
     title: "Agrisoz",
     description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project.",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600&auto=format&fit=crop",
@@ -40,7 +49,7 @@ const projects: Project[] = [
     icon: <Sprout size={20} className="text-black/80" />,
   },
   {
-    id: 4,
+    id: 5,
     title: "Website for PrimeTech",
     description: "A responsive, modern website developed for PrimeTech showcasing their services and products.",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop",
@@ -49,7 +58,7 @@ const projects: Project[] = [
     icon: <Monitor size={20} className="text-black/80" />,
   },
   {
-    id: 5,
+    id: 6,
     title: "Personal Portfolio",
     description: "A showcase of my work and abilities as a developer.",
     image: "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=1600&auto=format&fit=crop",
@@ -58,7 +67,7 @@ const projects: Project[] = [
     icon: <Code size={20} className="text-black/80" />,
   },
   {
-    id: 6,
+    id: 7,
     title: "Weather Dashboard",
     description: "Real-time weather information with beautiful visualizations.",
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1600&auto=format&fit=crop",
@@ -66,7 +75,7 @@ const projects: Project[] = [
     link: "https://iamodlj.github.io/weather-app/",
   },
   {
-    id: 7,
+    id: 8,
     title: "TicTacToe Game",
     description: "A classic TicTacToe game with both Player vs Player and Player vs AI modes. Features a modern UI design and smooth animations.",
     image: "/TicTacToe.png",
