@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck, Wine } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -82,6 +82,15 @@ const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript", "Game Development", "Vercel"],
     link: "https://tic-tac-toc-taupe.vercel.app/",
     icon: <Code size={20} className="text-black/80" />,
+  },
+  {
+    id: 9,
+    title: "Kool Hib",
+    description: "An e-commerce platform for a premium hibiscus-based beverage brand based in Accra, Ghana. Features include product catalog, shopping cart functionality, responsive design, blog section, and SEO optimization for their line of premium juices.",
+    image: "/kool_hib_preview.png",
+    tags: ["React", "Vite", "Tailwind CSS", "Framer Motion", "React Router", "Vercel"],
+    link: "https://kool-hib.vercel.app/",
+    icon: <Wine size={20} className="text-black/80" />,
   },
 ];
 
