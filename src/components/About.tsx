@@ -30,8 +30,8 @@ const techStacks = [
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
   },
   {
-    name: 'Express',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
+    name: 'Supabase',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg'
   },
   {
     name: 'C++',
@@ -56,6 +56,10 @@ const techStacks = [
   {
     name: 'MySQL',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+  },
+  {
+    name: 'Git',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
   }
 ];
 

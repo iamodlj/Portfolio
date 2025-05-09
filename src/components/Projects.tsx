@@ -25,9 +25,9 @@ const projects: Project[] = [
     id: 2,
     title: "Abokobi Secure Banking Shield",
     description: "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
-    image: "/abokobi-banking-login.png", // Update to your local image path
+    image: "/abokobi-banking-login.png", 
     tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
-    link: "https://abokobi-secure-banking-shield.vercel.app",
+    link: "https://abokobi-banking.vercel.app/",
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
   {
@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Agrisoz",
-    description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project.",
+    description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project. Team Lead for this project",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600&auto=format&fit=crop",
     tags: ["React", "AI", "Frontend"],
     link: "https://github.com/iamodlj/agrisoz",
