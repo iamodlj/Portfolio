@@ -1,10 +1,12 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -18,12 +20,27 @@ const Contact = () => {
     });
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formState);
-    // Reset form
-    setFormState({ name: '', email: '', message: '' });
-    alert('Thank you for your message! I will get back to you soon.');
+    setIsSubmitting(true);
+    
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      
+      console.log('Email sent successfully!');
+      setFormState({ name: '', email: '', message: '' });
+      alert('Thank you for your message! I will get back to you soon.');
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Something went wrong. Please try again later or email me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   useEffect(() => {
@@ -107,7 +124,7 @@ const Contact = () => {
             </p>
           </div>
           
-          <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
+          <form ref={formRef} onSubmit={handleSubmit} className="glass rounded-2xl p-8">
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Your Name
@@ -158,10 +175,11 @@ const Contact = () => {
             
             <button
               type="submit"
-              className="px-6 py-3 bg-black text-white rounded-full font-medium flex items-center hover-lift w-full justify-center"
+              disabled={isSubmitting}
+              className="px-6 py-3 bg-black text-white rounded-full font-medium flex items-center hover-lift w-full justify-center disabled:bg-black/70 disabled:cursor-not-allowed"
             >
-              Send Message
-              <Send size={16} className="ml-2" />
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {!isSubmitting && <Send size={16} className="ml-2" />}
             </button>
           </form>
         </div>
