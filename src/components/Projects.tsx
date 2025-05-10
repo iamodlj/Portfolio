@@ -13,6 +13,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 0,
+    title: "CLAPES DEPARTMENT",
+    description: "CLAPES Department clothing brand E-commerce website. Providing a modern, component-based architecture. Features include responsive design, modern dark UI, product catalog with filtering, contact form with validation, about page, shopping cart and checkout, image gallery with filtering, and smooth animations. Deployed on Vercel.",
+    image: "/clapesdept.png",
+    tags: [
+      "React.js","CSS", "E-commerce", "Vercel"
+    ],
+    link: "https://www.clapesdepartment.com/",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
+  {
     id: 1,
     title: "Web-Based Ghana Vehicle Check",
     description: "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks. Serving as my final year project in the university - UPSA",
