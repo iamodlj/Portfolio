@@ -34,7 +34,8 @@ const techStacks = [
   {
     name: 'Tailwind CSS',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
-  },  {
+  },  
+  {
     name: 'Node.js',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
   },
