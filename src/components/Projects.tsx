@@ -29,7 +29,7 @@ const projects: Project[] = [
     description: "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks. Serving as my final year project in the university - UPSA",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
     tags: ["PHP", "HTML", "CSS", "JavaScript", "EmailJS", "AJAX", "GitHub", "Chart.js"],
-    link: "https://github.com/iamodlj/Ghana-Vehicle-Check",
+    link: "https://github.com/iamodlj/",
     icon: <Database size={20} className="text-black/80" />,
   },
   {
@@ -56,7 +56,7 @@ const projects: Project[] = [
     description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project. Team Lead for this project",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600&auto=format&fit=crop",
     tags: ["React", "AI", "Frontend"],
-    link: "https://github.com/iamodlj/agrisoz",
+    link: "https://github.com/iamodlj/",
     icon: <Sprout size={20} className="text-black/80" />,
   },
   {
