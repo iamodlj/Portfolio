@@ -4,7 +4,7 @@ My professional portfolio showcasing various web development projects.
 
 
 
-### Other Featured Projects
+### Featured Projects
 - **Clapes Department**: E-commerce website for a clothing brand
 - **Abokobi Secure Banking Shield**: Modern banking platform for rural banking in Ghana
 - **TicTacToe Game**: Classic game with both Player vs Player and AI modes
@@ -56,8 +56,8 @@ This portfolio is deployed on Vercel. For your own deployment:
 
 ## Contact
 
-Abraham Sackey Ohene Gyan
-- Email: [example@email.com]
+Abraham Sackey Ohene Gyan (ASOG)
+- Email: [ohenegyanfamily@gmail.com]
 - GitHub: [iamodlj](https://github.com/iamodlj)
 
 ## License
