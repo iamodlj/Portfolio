@@ -2,28 +2,14 @@
 
 My professional portfolio showcasing various web development projects.
 
-## Featured Projects
 
-### Calculator App
-![Calculator App Preview](/public/Calculator.png)
-
-A modern calculator application built with React and styled with Tailwind CSS.
-
-**Features:**
-- Basic arithmetic operations (+, -, ×, ÷)
-- Clear and backspace functionality
-- Modern, responsive design
-- Error handling for invalid calculations
-- SEO optimized for search engines
-- PWA ready with manifest.json
-
-**Live Demo:** [Calculator App](https://calculator-app-iamodljs-projects.vercel.app/)
 
 ### Other Featured Projects
 - **Clapes Department**: E-commerce website for a clothing brand
 - **Abokobi Secure Banking Shield**: Modern banking platform for rural banking in Ghana
 - **TicTacToe Game**: Classic game with both Player vs Player and AI modes
 - **Kool Hib**: E-commerce platform for a premium hibiscus-based beverage brand
+- **Calculator App**
 
 ## Technology Stack
 
