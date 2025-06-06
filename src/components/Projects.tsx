@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck, Wine } from 'lucide-react';
+import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck, Wine, Calculator } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -14,8 +14,8 @@ interface Project {
 const projects: Project[] = [
   {
     id: 0,
-    title: "CLAPES DEPARTMENT",
-    description: "CLAPES Department clothing brand E-commerce website. Providing a modern, component-based architecture. Features include responsive design, modern dark UI, product catalog with filtering, contact form with validation, about page, shopping cart and checkout, image gallery with filtering, and smooth animations. Deployed on Vercel.",
+    title: "Clapes Department",
+    description: "Clapes Department clothing brand E-commerce website. Providing a modern, component-based architecture. Features include responsive design, modern dark UI, product catalog with filtering, contact form with validation, about page, shopping cart and checkout, image gallery with filtering, and smooth animations. Deployed on Vercel.",
     image: "/clapesdept.png",
     tags: [
       "React.js","CSS", "E-commerce", "Vercel"
@@ -25,6 +25,15 @@ const projects: Project[] = [
   },
   {
     id: 1,
+    title: "Calculator App",
+    description: "Calculator built with React and styled with Tailwind CSS. Features basic arithmetic operations, clear and backspace functionality, modern responsive design, error handling for invalid calculations, SEO optimization, and PWA ready with manifest.json.",
+    image: "/Calculator.png",
+    tags: ["React", "Tailwind CSS", "JavaScript", "PWA", "Vercel"],
+    link: "https://calculator-app-iamodljs-projects.vercel.app/",
+    icon: <Calculator size={20} className="text-black/80" />,
+  },
+  {
+    id: 2,
     title: "Web-Based Ghana Vehicle Check",
     description: "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks. Serving as my final year project in the university - UPSA",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
@@ -33,7 +42,7 @@ const projects: Project[] = [
     icon: <Database size={20} className="text-black/80" />,
   },
   {
-    id: 2,
+    id: 3,
     title: "Abokobi Secure Banking Shield",
     description: "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
     image: "/abokobi-banking-login.png", 
@@ -42,7 +51,7 @@ const projects: Project[] = [
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
   {
-    id: 3,
+    id: 4,
     title: "Secure Password Manager",
     description: "A secure password manager implemented in Python. It allows you to store, retrieve, and manage your passwords securely using encryption.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
@@ -51,7 +60,7 @@ const projects: Project[] = [
     icon: <Lock size={20} className="text-black/80" />,
   },
   {
-    id: 4,
+    id: 5,
     title: "Agrisoz",
     description: "An AI-powered system that assists farmers in swiftly identifying, diagnosing, and addressing issues related to crops and livestock, enhancing productivity and reducing losses. Worked as a frontend developer for the project. Team Lead for this project",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1600&auto=format&fit=crop",
@@ -60,7 +69,7 @@ const projects: Project[] = [
     icon: <Sprout size={20} className="text-black/80" />,
   },
   {
-    id: 5,
+    id: 6,
     title: "Website for PrimeTech",
     description: "A responsive, modern website developed for PrimeTech showcasing their services and products.",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop",
@@ -69,7 +78,7 @@ const projects: Project[] = [
     icon: <Monitor size={20} className="text-black/80" />,
   },
   {
-    id: 6,
+    id: 7,
     title: "Personal Portfolio",
     description: "A showcase of my work and abilities as a developer.",
     image: "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=1600&auto=format&fit=crop",
@@ -78,7 +87,7 @@ const projects: Project[] = [
     icon: <Code size={20} className="text-black/80" />,
   },
   {
-    id: 7,
+    id: 8,
     title: "Weather Dashboard",
     description: "Real-time weather information with beautiful visualizations.",
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1600&auto=format&fit=crop",
@@ -86,7 +95,7 @@ const projects: Project[] = [
     link: "https://iamodlj.github.io/weather-app/",
   },
   {
-    id: 8,
+    id: 9,
     title: "TicTacToe Game",
     description: "A classic TicTacToe game with both Player vs Player and Player vs AI modes. Features a modern UI design and smooth animations.",
     image: "/TicTacToe.png",
@@ -95,7 +104,7 @@ const projects: Project[] = [
     icon: <Code size={20} className="text-black/80" />,
   },
   {
-    id: 9,
+    id: 10,
     title: "Kool Hib",
     description: "An e-commerce platform for a premium hibiscus-based beverage brand based in Accra, Ghana. Features include product catalog, shopping cart functionality, responsive design, blog section, and SEO optimization for their line of premium juices.",
     image: "/kool_hib_preview.png",

@@ -1,8 +1,18 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "abraham-sackey-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Personal portfolio website featuring projects like the Calculator App, Clapes Department E-commerce, Abokobi Banking, and more.",
+  "author": "Abraham Sackey Ohene Gyan",
   "type": "module",
+  "keywords": [
+    "portfolio",
+    "developer",
+    "react",
+    "calculator",
+    "ecommerce",
+    "web development"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -42,6 +52,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tanstack/react-query": "^5.56.2",
     "@vercel/analytics": "^1.5.0",
+    "abraham-sackey-portfolio": "file:",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
