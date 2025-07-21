@@ -2,8 +2,6 @@
 
 My professional portfolio showcasing various web development projects.
 
-
-
 ### Featured Projects
 - **Clapes Department**: E-commerce website for a clothing brand
 - **Abokobi Secure Banking Shield**: Modern banking platform for rural banking in Ghana
