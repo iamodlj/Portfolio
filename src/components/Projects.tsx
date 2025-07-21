@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck, Wine, Calculator } from 'lucide-react';
+import { ArrowUpRight, Code, Database, Lock, Sprout, Monitor, ShieldCheck, Wine, Calculator, Sparkles, Church } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -111,6 +111,24 @@ const projects: Project[] = [
     tags: ["React", "Vite", "Tailwind CSS", "Framer Motion", "React Router", "Vercel"],
     link: "https://kool-hib.vercel.app/",
     icon: <Wine size={20} className="text-black/80" />,
+  },
+  {
+    id: 11,
+    title: "Luna Essence Spa",
+    description: "A beautiful, modern spa booking website with SMS confirmations, built with React, TypeScript, and TailwindCSS. Features glassmorphism effects, fully responsive design, interactive UI with dynamic SVG backgrounds, real-time SMS booking system via MNotify API, and Vercel Analytics integration.",
+    image: "/Luna.png",
+    tags: ["React", "TypeScript", "TailwindCSS", "Vite", "shadcn/ui"],
+    link: "https://lunaessencespa.com",
+    icon: <Sparkles size={20} className="text-black/80" />,
+  },
+  {
+    id: 12,
+    title: "Grace Avenue Church Management System",
+    description: "A comprehensive church management system built with React, Vite, and Supabase for Grace Avenue Church in Ghana. Features role-based access control, member and visitor management, attendance tracking, financial management, SMS broadcasting, equipment management, and analytics with real-time updates.",
+    image: "/Grace_Avenue.png",
+    tags: ["React", "TypeScript", "Supabase", "Vite", "shadcn/ui", "PostgreSQL"],
+    link: "https://github.com/iamodlj",
+    icon: <Church size={20} className="text-black/80" />,
   },
 ];
 
