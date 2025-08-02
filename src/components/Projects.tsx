@@ -17,9 +17,7 @@ const projects: Project[] = [
     title: "Clapes Department",
     description: "Clapes Department clothing brand E-commerce website. Providing a modern, component-based architecture. Features include responsive design, modern dark UI, product catalog with filtering, contact form with validation, about page, shopping cart and checkout, image gallery with filtering, and smooth animations. Deployed on Vercel.",
     image: "/clapesdept.png",
-    tags: [
-      "React.js","CSS", "E-commerce", 
-    ],
+    tags: ["React.js", "CSS", "E-commerce", "Vercel"],
     link: "https://www.clapesdepartment.com/",
     icon: <Monitor size={20} className="text-black/80" />,
   },
@@ -28,7 +26,7 @@ const projects: Project[] = [
     title: "Calculator App",
     description: "Calculator built with React and styled with Tailwind CSS. Features basic arithmetic operations, clear and backspace functionality, modern responsive design, error handling for invalid calculations, SEO optimization, and PWA ready with manifest.json.",
     image: "/Calculator.png",
-    tags: ["React", "Tailwind CSS", "JavaScript", "PWA", ],
+    tags: ["React", "Tailwind CSS", "JavaScript", "PWA"],
     link: "https://calculator-app-iamodljs-projects.vercel.app/",
     icon: <Calculator size={20} className="text-black/80" />,
   },
@@ -46,7 +44,7 @@ const projects: Project[] = [
     title: "Abokobi Secure Banking Shield",
     description: "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
     image: "/abokobi-banking-login.png", 
-    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
     link: "https://abokobi-banking.vercel.app/",
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
@@ -181,8 +179,8 @@ const Projects = () => {
               key={project.id} 
               className={`glass rounded-2xl overflow-hidden hover-lift ${
                 isVisible 
-                  ? 'opacity-0 animate-fade-in' 
-                  : ''
+                  ? 'opacity-100 animate-fade-in' 
+                  : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
