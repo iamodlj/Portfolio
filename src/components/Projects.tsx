@@ -193,7 +193,7 @@ const Projects = () => {
                   ? 'opacity-100 animate-fade-in' 
                   : 'opacity-0'
               }`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ '--animation-delay': `${index * 150}ms` } as React.CSSProperties }
             >
               <div className="aspect-video overflow-hidden">
                 <img 
