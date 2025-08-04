@@ -71,6 +71,7 @@ const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
+    const currentRef = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -80,14 +81,12 @@ const About = () => {
       },
       { threshold: 0.1 }
     );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-    
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -162,7 +161,7 @@ const About = () => {
                   className={`group flex flex-col items-center justify-center p-4 rounded-lg bg-black/5 hover:bg-black/10 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                     isVisible ? 'opacity-0 animate-fade-in' : ''
                   }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ '--animation-delay': `${index * 100}ms` } as React.CSSProperties}
                 >
                   <div className="w-12 h-12 mb-2 transform transition-transform duration-300 group-hover:scale-110">
                     <img

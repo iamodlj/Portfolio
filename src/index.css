@@ -107,6 +107,7 @@
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: var(--animation-delay, 0ms);
 }
 
 @keyframes fadeIn {
