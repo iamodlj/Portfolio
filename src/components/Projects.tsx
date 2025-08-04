@@ -134,7 +134,7 @@ const projects: Project[] = [
     description: "A modern, responsive website for Makarios Consult - a professional business consulting firm specializing in operations, healthcare strategy, and brand development. Features modern design, responsive layout, Calendly integration, team profiles, contact forms, fast performance, SEO optimization, and social media meta tags.",
     image: "/makariocapital.png",
     tags: [
-      "React 18", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "shadcn/ui", "React Router DOM", "React Hook Form", "Zod", "Lucide React", "Vercel", "GoDaddy DNS"
+      "React 18", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "shadcn/ui", "React Router DOM", "React Hook Form", "Zod", "Lucide React", "GoDaddy DNS"
     ],
     link: "https://www.makariocapital.com",
     icon: <Sparkles size={20} className="text-black/80" />,
