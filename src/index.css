@@ -60,6 +60,19 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Ensure projects are visible on mobile */
+  @media (max-width: 768px) {
+    .scroll-section {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    
+    .animate-fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
 }
 
 .animate-delay-100 {
@@ -107,8 +120,22 @@
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
-  animation-delay: var(--animation-delay, 0ms);
 }
+
+.animate-fade-in-delay-1 { animation-delay: 0ms; }
+.animate-fade-in-delay-2 { animation-delay: 150ms; }
+.animate-fade-in-delay-3 { animation-delay: 300ms; }
+.animate-fade-in-delay-4 { animation-delay: 450ms; }
+.animate-fade-in-delay-5 { animation-delay: 600ms; }
+.animate-fade-in-delay-6 { animation-delay: 750ms; }
+.animate-fade-in-delay-7 { animation-delay: 900ms; }
+.animate-fade-in-delay-8 { animation-delay: 1050ms; }
+.animate-fade-in-delay-9 { animation-delay: 1200ms; }
+.animate-fade-in-delay-10 { animation-delay: 1350ms; }
+.animate-fade-in-delay-11 { animation-delay: 1500ms; }
+.animate-fade-in-delay-12 { animation-delay: 1650ms; }
+.animate-fade-in-delay-13 { animation-delay: 1800ms; }
+.animate-fade-in-delay-14 { animation-delay: 1950ms; }
 
 @keyframes fadeIn {
   from {
