@@ -195,6 +195,16 @@ const projects: Project[] = [
     link: "https://www.makariocapital.com",
     icon: <Sparkles size={20} className="text-black/80" />,
   },
+    {
+      id: 14,
+      title: "Mount Sinai Home Healthcare Services Inc",
+      description:
+        "Personalized 1-on-1 Home Healthcare Services for loved ones. Experience compassionate care that enhances independence and quality of life. Certified professionals, licensed & insured. Based in Ontario.",
+      image: "/Mount_SinaiHomeHealthServices.png",
+      tags: [ "Healthcare", "Website", "Ontario"],
+      link: "https://mountsinaihealthcare.com",
+      icon: <ShieldCheck size={20} className="text-black/80" />,
+    },
 ];
 
 const Projects = () => {
