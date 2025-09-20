@@ -67,7 +67,12 @@ const techStacks = [
   ,
   {
     name: 'JSF',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' // Placeholder, replace with JSF logo if available
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' // Placeholder, replace with  if available
+  }
+  ,
+  {
+    name: 'Supabase',
+    logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png'
   }
 ];
 
