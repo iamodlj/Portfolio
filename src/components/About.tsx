@@ -64,6 +64,11 @@ const techStacks = [
     name: 'Photoshop',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'
   }
+  ,
+  {
+    name: 'JSF',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' // Placeholder, replace with JSF logo if available
+  }
 ];
 
 const About = () => {
