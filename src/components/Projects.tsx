@@ -180,41 +180,44 @@ const projects: Project[] = [
       "A modern, responsive website for Makarios Consult - a professional business consulting firm specializing in operations, healthcare strategy, and brand development. Features modern design, responsive layout, Calendly integration, team profiles, contact forms, fast performance, SEO optimization, and social media meta tags.",
     image: "/makariocapital.png",
     tags: [
-      "React 18",
+      "React",
       "TypeScript",
       "Vite",
       "Tailwind CSS",
-      "Radix UI",
-      "shadcn/ui",
-      "React Router DOM",
-      "React Hook Form",
-      "Zod",
-      "Lucide React",
+      "React",
       "GoDaddy DNS",
     ],
     link: "https://www.makariocapital.com",
     icon: <Sparkles size={20} className="text-black/80" />,
   },
-    {
-      id: 14,
-      title: "Mount Sinai Home Healthcare Services Inc",
-      description:
-        "Personalized 1-on-1 Home Healthcare Services for loved ones. Experience compassionate care that enhances independence and quality of life. Certified professionals, licensed & insured. Based in Ontario.",
-      image: "/Mount_SinaiHomeHealthServices.png",
-      tags: [ "Healthcare", "Website", "Ontario"],
-      link: "https://mountsinaihealthcare.com",
-      icon: <ShieldCheck size={20} className="text-black/80" />,
-    },
-];
-
-const Projects = () => {
+  {
+    id: 14,
+    title: "Mount Sinai Home Healthcare Services Inc",
+    description:
+      "Personalized 1-on-1 Home Healthcare Services for loved ones. Experience compassionate care that enhances independence and quality of life. Certified professionals, licensed & insured. Based in Ontario.",
+    image: "/Mount_SinaiHomeHealthServices.png",
+    tags: [ "Healthcare", "React","Website", "Ontario"],
+    link: "https://mountsinaihealthcare.com",
+    icon: <ShieldCheck size={20} className="text-black/80" />,
+  },
+  {
+    id: 15,
+    title: "Elite Health Solutions Inc.",
+    description:
+      "We are a leading provider of comprehensive healthcare staffing solutions, dedicated to connecting skilled professionals such as Nurses, RPNs, and PSWs with facilities across Canada.",
+    image: "/elite.png",
+    tags: ["Healthcare", "React", "Canada", "Vite"],
+    link: "https://www.ehssi.ca/",
+    icon: <ShieldCheck size={20} className="text-black/80" />,
+  },
+];const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     console.log("Projects component mounted");
 
-    // Show projects immediately on mobile devices as fallback
+
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
       console.log("Mobile device detected, showing projects immediately");
