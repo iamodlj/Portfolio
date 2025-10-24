@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formState, setFormState] = useState({
@@ -25,14 +23,25 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current!,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const response = await fetch(import.meta.env.VITE_API_URL || 'https://portfolio-api.vercel.app/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      const data = await response.json();
+      console.log('Email sent successfully:', data.messageId);
       
-      console.log('Email sent successfully!');
       setFormState({ name: '', email: '', message: '' });
       alert('Thank you for your message! I will get back to you soon.');
     } catch (error) {
@@ -124,7 +133,7 @@ const Contact = () => {
             </p>
           </div>
           
-          <form ref={formRef} onSubmit={handleSubmit} className="glass rounded-2xl p-8">
+          <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Your Name
