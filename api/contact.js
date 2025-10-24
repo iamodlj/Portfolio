@@ -2,10 +2,27 @@ import { createTransport } from 'nodemailer';
 
 export default async function handler(req, res) {
   // Enable CORS
-  // Allow requests from any origin or echo the request origin
-  const origin = req.headers.origin || '*';
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin === 'null' ? '*' : origin);
+  // Restrict allowed origins for safety; add more if needed
+  const allowedOrigins = [
+    'https://asog.vercel.app',
+    'https://asog.vercel.app/',
+    'https://www.asog.vercel.app',
+    'http://localhost:8080',
+  ];
+  const originHeader = req.headers.origin || '';
+  const origin = allowedOrigins.includes(originHeader) ? originHeader : '';
+
+  // Diagnostic log to inspect origin headers (visible in Vercel logs)
+  console.log('Request origin:', originHeader, '-> Using origin:', origin || 'none');
+
+  // Set CORS headers early so preflight receives them
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    // Fallback to allow all if origin isn't in whitelist (less secure)
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
   res.setHeader('Access-Control-Max-Age', '86400');
