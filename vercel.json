@@ -11,35 +11,44 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/contact",
-      "dest": "api/contact.js"
+      "source": "/api/contact",
+      "destination": "/api/contact.js"
     },
     {
-      "src": "/assets/.*\\.js$",
-      "headers": {
-        "Content-Type": "application/javascript"
-      }
-    },
-    {
-      "src": "/index-.*\\.js$",
-      "headers": {
-        "Content-Type": "application/javascript"
-      }
-    },
-    {
-      "src": "/(.*\\.(js|mjs|wasm|json|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))$",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/assets/.*\\.js$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    },
+    {
+      "source": "/index-.*\\.js$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    },
+    {
+      "source": "/.*\\.(js|mjs|wasm|json|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
