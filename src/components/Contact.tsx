@@ -25,7 +25,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL || 'https://portfolio-api.vercel.app/api/contact', {
+      // Use relative path to call the API route on the same domain
+      const apiUrl = import.meta.env.VITE_API_URL || '/api/contact';
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

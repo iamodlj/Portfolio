@@ -8,9 +8,10 @@ export default async function handler(req, res) {
     'https://asog.vercel.app/',
     'https://www.asog.vercel.app',
     'http://localhost:8080',
+    'http://localhost:5173', // Vite dev server default port
   ];
   const originHeader = req.headers.origin || '';
-  const origin = allowedOrigins.includes(originHeader) ? originHeader : '';
+  const origin = allowedOrigins.includes(originHeader) ? originHeader : originHeader;
 
   // Set CORS headers early so preflight receives them
   if (origin) {
@@ -126,6 +127,14 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
+    // Ensure CORS headers are present on error responses too
+    if (origin) {
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    } else {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+    }
+    
     res.status(500).json({
       message: 'Failed to send email',
       error: error instanceof Error ? error.message : 'Unknown error'
