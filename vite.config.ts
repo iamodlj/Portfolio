@@ -18,15 +18,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Ensure proper module handling
+
     rollupOptions: {
       output: {
-        // Ensure module scripts are properly formatted
+
         format: 'es',
         manualChunks: undefined,
       },
     },
-    // Increase chunk size warning limit
+
     chunkSizeWarningLimit: 1000,
   },
 }));
