@@ -40,6 +40,40 @@ export default async function handler(req, res) {
   try {
   const { name, email, message } = req.body;
 
+    // Debug: parse query params safely and check headers for debug bypass
+    try {
+      const urlObj = new URL(req.url || '', 'http://localhost');
+      req.query = Object.fromEntries(urlObj.searchParams.entries());
+    } catch (e) {
+      req.query = {};
+    }
+
+    const debugMode =
+      req.query.debug === '1' ||
+      (req.headers && (req.headers['x-skip-smtp'] === '1' || req.headers['x-debug'] === '1'));
+
+    console.log('Function invoked. Method:', req.method, 'Debug mode:', debugMode);
+    console.log('Request origin header:', originHeader);
+    console.log('Request body (trimmed):', JSON.stringify({ name, email, message }));
+
+    // If debug mode is enabled, skip sending email and return success for testing CORS and plumbing
+    if (debugMode) {
+      if (origin) {
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Access-Control-Allow-Origin', origin);
+      } else {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+      }
+      res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+      res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+      return res.status(200).json({
+        message: 'Debug mode - mail not sent',
+        debug: true,
+        data: { name, email, message },
+      });
+    }
+
     const transporter = createTransport({
       host: 'server242.web-hosting.com',
       port: 587,
