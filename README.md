@@ -48,6 +48,15 @@ cp .env.example .env
 
 # Start the development server
 npm run dev
+
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Run tests with UI
+npm run test:ui
 ```
 
 The application will open in your browser at `http://localhost:5173`.
@@ -82,6 +91,25 @@ This portfolio is deployed on Vercel. For your own deployment:
 2. Navigate to "Environment Variables"
 3. Add the SMTP configuration variables listed above
 4. Redeploy your project
+
+## Testing
+
+This project uses Vitest for unit testing. Run the following commands:
+
+- `npm test` - Run all tests
+- `npm test -- --watch` - Run tests in watch mode
+- `npm run test:ui` - Run tests with UI
+
+## Features
+
+- ✅ Modern React with TypeScript
+- ✅ Error boundaries for graceful error handling
+- ✅ Toast notifications for user feedback
+- ✅ Loading states for async operations
+- ✅ Responsive design
+- ✅ Unit tests with Vitest
+- ✅ SEO optimized
+- ✅ Accessible components
 
 ## Contact
 

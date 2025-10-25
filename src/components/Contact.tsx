@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Mail, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Loader2 } from 'lucide-react';
+import { useToast as useCustomToast } from '@/hooks/useToast.tsx';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -10,6 +11,7 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const { showSuccess, showError, ToastContainer } = useCustomToast();
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -42,9 +44,9 @@ const Contact = () => {
       const data = await response.json();
       
       setFormState({ name: '', email: '', message: '' });
-      alert('Thank you for your message! I will get back to you soon.');
+      showSuccess('Thank you for your message! I will get back to you soon.');
     } catch (error) {
-      alert('Something went wrong. Please try again later or email me directly.');
+      showError('Something went wrong. Please try again later or email me directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -185,12 +187,22 @@ const Contact = () => {
               disabled={isSubmitting}
               className="px-6 py-3 bg-black text-white rounded-full font-medium flex items-center hover-lift w-full justify-center disabled:bg-black/70 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-              {!isSubmitting && <Send size={16} className="ml-2" />}
+              {isSubmitting ? (
+                <>
+                  <Loader2 size={16} className="mr-2 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <Send size={16} className="ml-2" />
+                </>
+              )}
             </button>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
