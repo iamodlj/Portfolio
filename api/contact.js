@@ -38,11 +38,11 @@ export default async function handler(req, res) {
   }
 
   try {
-  const { name, email, message } = req.body;
+    const { name, email, message } = req.body;
 
     // Debug: parse query params safely and check headers for debug bypass
     try {
-      const urlObj = new URL(req.url || '', 'http://localhost');
+      const urlObj = new URL(req.url || '', `http://${req.headers.host || 'localhost'}`);
       req.query = Object.fromEntries(urlObj.searchParams.entries());
     } catch (e) {
       req.query = {};
