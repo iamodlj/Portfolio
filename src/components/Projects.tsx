@@ -220,33 +220,20 @@ const projects: Project[] = [
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    console.log("Projects component mounted");
-
-
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
-      console.log("Mobile device detected, showing projects immediately");
       setIsVisible(true);
       return;
     }
 
     // Fallback timeout to show projects if intersection observer fails
     const fallbackTimer = setTimeout(() => {
-      console.log("Fallback: showing projects after 3 seconds");
       setIsVisible(true);
     }, 3000);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log("Projects intersection:", {
-          isIntersecting: entry.isIntersecting,
-          intersectionRatio: entry.intersectionRatio,
-          boundingClientRect: entry.boundingClientRect,
-          viewportWidth: window.innerWidth,
-        });
-
         if (entry.isIntersecting) {
-          console.log("Projects section is visible, setting isVisible to true");
           setIsVisible(true);
           clearTimeout(fallbackTimer);
           observer.unobserve(entry.target);

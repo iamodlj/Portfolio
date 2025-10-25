@@ -12,9 +12,6 @@ export default async function handler(req, res) {
   const originHeader = req.headers.origin || '';
   const origin = allowedOrigins.includes(originHeader) ? originHeader : '';
 
-  // Diagnostic log to inspect origin headers (visible in Vercel logs)
-  console.log('Request origin:', originHeader, '-> Using origin:', origin || 'none');
-
   // Set CORS headers early so preflight receives them
   if (origin) {
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -52,10 +49,6 @@ export default async function handler(req, res) {
       req.query.debug === '1' ||
       (req.headers && (req.headers['x-skip-smtp'] === '1' || req.headers['x-debug'] === '1'));
 
-    console.log('Function invoked. Method:', req.method, 'Debug mode:', debugMode);
-    console.log('Request origin header:', originHeader);
-    console.log('Request body (trimmed):', JSON.stringify({ name, email, message }));
-
     // If debug mode is enabled, skip sending email and return success for testing CORS and plumbing
     if (debugMode) {
       if (origin) {
@@ -74,13 +67,24 @@ export default async function handler(req, res) {
       });
     }
 
+    // Get credentials from environment variables
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'techwiththefather@gmail.com';
+    const fromEmail = process.env.FROM_EMAIL || smtpUser;
+
+    if (!smtpHost || !smtpUser || !smtpPass) {
+      throw new Error('SMTP credentials not configured');
+    }
+
     const transporter = createTransport({
-      host: 'server242.web-hosting.com',
+      host: smtpHost,
       port: 587,
       secure: false,
       auth: {
-        user: 'service@kamakgroup.com',
-        pass: 'Kamak@123Kamak',
+        user: smtpUser,
+        pass: smtpPass,
       },
       tls: {
         ciphers: 'SSLv3'
@@ -89,8 +93,8 @@ export default async function handler(req, res) {
 
     // Prepare mail options
     const mailOptions = {
-      from: `"Portfolio Contact" <service@kamakgroup.com>`,
-      to: 'techwiththefather@gmail.com',
+      from: `"Portfolio Contact" <${fromEmail}>`,
+      to: recipientEmail,
       replyTo: email,
       subject: `Portfolio Contact from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
@@ -112,8 +116,6 @@ export default async function handler(req, res) {
     // Send email
     const info = await transporter.sendMail(mailOptions);
 
-    console.log('Email sent successfully:', info.messageId);
-
     // Ensure CORS headers are present on the final response as well
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', origin === 'null' ? '*' : origin);
@@ -124,7 +126,6 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Error sending email:', error);
     res.status(500).json({
       message: 'Failed to send email',
       error: error instanceof Error ? error.message : 'Unknown error'

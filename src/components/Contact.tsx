@@ -40,12 +40,10 @@ const Contact = () => {
       }
 
       const data = await response.json();
-      console.log('Email sent successfully:', data.messageId);
       
       setFormState({ name: '', email: '', message: '' });
       alert('Thank you for your message! I will get back to you soon.');
     } catch (error) {
-      console.error('Failed to send email:', error);
       alert('Something went wrong. Please try again later or email me directly.');
     } finally {
       setIsSubmitting(false);
