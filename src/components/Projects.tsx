@@ -215,6 +215,26 @@ const projects: Project[] = [
     link: "https://www.ehssi.ca/",
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
+  {
+    id: 16,
+    title: "Lingua.care",
+    description:
+      "A human-centered health tech platform transforming how culturally and linguistically diverse communities access healthcare. Features multilingual care note transcription, voice-to-text documentation, EHR integration API, family communication portal, and smart care recommendations with AI-driven tools for 100+ languages.",
+    image: "/lingua.png",
+    tags: ["HealthTech", "Multilingual", "Healthcare", "EHR Integration"],
+    link: "https://www.lingua.care/",
+    icon: <ShieldCheck size={20} className="text-black/80" />,
+  },
+  {
+    id: 17,
+    title: "Orphanage Care Management System",
+    description:
+      "A comprehensive management system designed for orphanage care facilities. Streamlines operations with features for child records management, staff coordination, donation tracking, visitor management, and reporting. Built to enhance care delivery and administrative efficiency.",
+    image: "/orphan_care_management_system.png",
+    tags: ["React", "TypeScript", "Management System", "Social Impact"],
+    link: "https://assurance-orphan.vercel.app/",
+    icon: <ShieldCheck size={20} className="text-black/80" />,
+  },
 ];const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
