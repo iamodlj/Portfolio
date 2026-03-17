@@ -17,7 +17,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: string | string[];
   tags: string[];
   link: string;
   icon?: JSX.Element;
@@ -113,7 +113,7 @@ const projects: Project[] = [
     description: "A showcase of my work and abilities as a developer.",
     image:
       "https://images.unsplash.com/photo-1545665277-5937489579f2?q=80&w=1600&auto=format&fit=crop",
-    tags: ["React", "Vite", "TypeScript", "shadcn-ui", "Tailwind CSS"],
+    tags: ["React", "Vite", "TypeScript", "shadcn-ui", "Tailwind CSS", "Live"],
     link: "#",
     icon: <Code size={20} className="text-black/80" />,
   },
@@ -158,10 +158,10 @@ const projects: Project[] = [
   },
   {
     id: 12,
-    title: "Grace Avenue Church Management System",
+    title: "Church Management System",
     description:
-      "A comprehensive church management system built with React, Vite, and Supabase for Grace Avenue Church in Ghana. Features role-based access control, member and visitor management, attendance tracking, financial management, SMS broadcasting, equipment management, and analytics with real-time updates.",
-    image: "/Grace_Avenue.png",
+      "A comprehensive church management system built with React, Vite, and Supabase for a church in Ghana. Features role-based access control, member and visitor management, attendance tracking, financial management, SMS broadcasting, equipment management, and analytics with real-time updates.",
+    image: ["/caci-fwc.PNG", "/Grace_Avenue.png"],
     tags: [
       "React",
       "TypeScript",
@@ -169,6 +169,7 @@ const projects: Project[] = [
       "Vite",
       "shadcn/ui",
       "PostgreSQL",
+      "Live",
     ],
     link: "https://github.com/iamodlj",
     icon: <Church size={20} className="text-black/80" />,
@@ -235,7 +236,98 @@ const projects: Project[] = [
     link: "https://assurance-orphan.vercel.app/",
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
-];const Projects = () => {
+  {
+    id: 18,
+    title: "ASOG POS Web App",
+    description:
+      "A live POS web application with secure account sign-in, built for streamlined day-to-day business transactions and operations. Powered by Advanced Tech Business Solutions (ATBS).",
+    image: "/pos.PNG",
+    tags: ["Web App", "POS", "Live"],
+    link: "https://asog-pos.vercel.app/",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
+  {
+    id: 19,
+    title: "Voices To Vision",
+    description:
+      "A live disability-inclusive community platform for Black and newcomer youth in Canada, highlighting programs in employment readiness, mentorship, accessible tech training, and advocacy.",
+    image: "/v2v.PNG",
+    tags: ["Website", "Community Impact", "Accessibility", "Live"],
+    link: "https://www.voicestovision.org",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
+  {
+    id: 20,
+    title: "Cescars Website & CMS",
+    description:
+      "A live brand website with private-access entry experience and CMS-backed content management for controlled updates.",
+    image: "/cesars.PNG",
+    tags: ["Website", "CMS", "Live"],
+    link: "https://www.cescars.com/",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
+  {
+    id: 21,
+    title: "Eunoia Trade",
+    description:
+      "A pre-launch investment platform focused on African markets, now running a public waitlist while preparing full website and mobile app experiences.",
+    image: "/ETA.PNG",
+    tags: ["FinTech", "Website", "Mobile App", "Coming Soon"],
+    link: "https://www.eunoiatrade.com/",
+    icon: <Code size={20} className="text-black/80" />,
+  },
+  {
+    id: 22,
+    title: "Averra Study Web App",
+    description:
+      "An AI-powered legal studies platform for Ghanaian law students featuring case summaries, flashcards, question banks, and an AI study assistant, with onboarding and learning flows already online.",
+    image: "/averra.PNG",
+    tags: ["Web App", "Education", "LegalTech", "Live"],
+    link: "https://averrastudy.vercel.app/",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
+];
+
+const liveProjectIds = [
+  12, // Church Management System
+  18, // ASOG POS Web App
+  20, // Cescars Website & CMS
+  19, // Voices To Vision
+  13, // Makarios Consult
+  11, // Luna Essence Spa
+  16, // Lingua.care
+  14, // Mount Sinai Home Healthcare Services Inc
+  15, // Elite Health Solutions Inc.
+  10, // Kool Hib
+  0, // Clapes Department
+  22, // Averra Study Web App
+  17, // Orphanage Care Management System
+  3, // Abokobi Secure Banking Shield
+  1, // Calculator App
+  9, // TicTacToe Game
+  8, // Weather Dashboard
+  6, // Website for PrimeTech
+  7, // Personal Portfolio
+];
+
+const comingSoonProjectIds = [
+  21, // Eunoia Trade
+];
+
+const additionalProjectIds = [
+  5, // Agrisoz
+  2, // Web-Based Ghana Vehicle Check
+  4, // Secure Password Manager
+];
+
+const projectsById = new Map(projects.map((project) => [project.id, project]));
+
+const getProjectsByIds = (ids: number[]) =>
+  ids
+    .map((id) => projectsById.get(id))
+    .filter((project): project is Project => Boolean(project));
+
+const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -277,6 +369,97 @@ const projects: Project[] = [
     };
   }, []);
 
+  const liveProjects = getProjectsByIds(liveProjectIds);
+  const comingSoonProjects = getProjectsByIds(comingSoonProjectIds);
+
+  const pinnedIds = new Set([
+    ...liveProjectIds,
+    ...comingSoonProjectIds,
+    ...additionalProjectIds,
+  ]);
+
+  const additionalProjects = [
+    ...getProjectsByIds(additionalProjectIds),
+    ...projects.filter((project) => !pinnedIds.has(project.id)),
+  ];
+
+  const renderProjectGrid = (projectList: Project[], animationOffset = 0) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projectList.map((project, index) => (
+        <div
+          key={project.id}
+          className={`glass rounded-2xl overflow-hidden hover-lift ${
+            isVisible
+              ? `opacity-100 animate-fade-in animate-fade-in-delay-${Math.min(
+                  animationOffset + index + 1,
+                  14
+                )}`
+              : "opacity-0"
+          }`}
+        >
+          {Array.isArray(project.image) ? (
+            <div className="aspect-video grid grid-cols-2 gap-1 overflow-hidden bg-gray-100">
+              {project.image.map((imageSrc, imageIndex) => (
+                <img
+                  key={`${project.id}-${imageIndex}`}
+                  src={imageSrc}
+                  alt={`${project.title} screenshot ${imageIndex + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                  }}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="aspect-video overflow-hidden bg-gray-100">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/placeholder.svg";
+                }}
+              />
+            </div>
+          )}
+          <div className="p-6">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 bg-black/5 rounded-full text-xs font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              {project.icon && (
+                <div className="flex items-center justify-center">
+                  {project.icon}
+                </div>
+              )}
+              <h3 className="text-xl font-bold">{project.title}</h3>
+            </div>
+            <p className="text-black/70 mb-4">{project.description}</p>
+            <a
+              href={project.link}
+              className="inline-flex items-center font-medium text-black"
+            >
+              View Project
+              <ArrowUpRight size={16} className="ml-1" />
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <section
       id="projects"
@@ -299,62 +482,44 @@ const projects: Project[] = [
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`glass rounded-2xl overflow-hidden hover-lift ${
-                isVisible
-                  ? `opacity-100 animate-fade-in animate-fade-in-delay-${Math.min(
-                      index + 1,
-                      14
-                    )}`
-                  : "opacity-0"
-              }`}
-            >
-              <div className="aspect-video overflow-hidden bg-gray-100">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/placeholder.svg";
-                  }}
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-black/5 rounded-full text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  {project.icon && (
-                    <div className="flex items-center justify-center">
-                      {project.icon}
-                    </div>
-                  )}
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                </div>
-                <p className="text-black/70 mb-4">{project.description}</p>
-                <a
-                  href={project.link}
-                  className="inline-flex items-center font-medium text-black"
-                >
-                  View Project
-                  <ArrowUpRight size={16} className="ml-1" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        {liveProjects.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              Live Projects
+            </h3>
+            <p className="text-black/70 mb-8">
+              Production-ready projects currently accessible online.
+            </p>
+            {renderProjectGrid(liveProjects)}
+          </div>
+        )}
+
+        {comingSoonProjects.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              Coming Soon
+            </h3>
+            <p className="text-black/70 mb-8">
+              Upcoming products and platforms currently in final development.
+            </p>
+            {renderProjectGrid(comingSoonProjects, liveProjects.length)}
+          </div>
+        )}
+
+        {additionalProjects.length > 0 && (
+          <div>
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              Additional Projects
+            </h3>
+            <p className="text-black/70 mb-8">
+              More work across web apps, tooling, and product experiments.
+            </p>
+            {renderProjectGrid(
+              additionalProjects,
+              liveProjects.length + comingSoonProjects.length
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

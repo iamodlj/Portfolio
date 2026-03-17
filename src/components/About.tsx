@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Code, Globe, UserCheck } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface TechStack {
@@ -7,7 +6,7 @@ interface TechStack {
   logo: string;
 }
 
-const techStacks = [
+const techStacks: TechStack[] = [
   {
     name: 'React',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
@@ -57,8 +56,28 @@ const techStacks = [
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
   },
   {
-    name: 'Spring Boot',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
+    name: 'Docker',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+  },
+  {
+    name: 'CI/CD',
+    logo: 'https://cdn.simpleicons.org/githubactions/2088FF'
+  },
+  {
+    name: 'AWS',
+    logo: 'https://cdn.simpleicons.org/amazonaws/232F3E'
+  },
+  {
+    name: 'Jest',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg'
+  },
+  {
+    name: 'Hetzner',
+    logo: 'https://cdn.simpleicons.org/hetzner/D50C2D'
+  },
+  {
+    name: 'Express',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
   },
   {
     name: 'Photoshop',
@@ -71,9 +90,13 @@ const techStacks = [
   }
   ,
   {
-    name: 'Supabase',
-    logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png'
-  }
+    name: 'React Native',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+  },
+      {
+        name: 'PostgreSQL',
+        logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png'
+      }
 ];
 
 const About = () => {
@@ -134,12 +157,12 @@ const About = () => {
               </Avatar>
               <div>
                 <h3 className="font-bold text-xl">Abraham Sackey Ohene Gyan (ASOG)</h3>
-                <p className="text-black/70">Web Developer / Software Engineer </p>
+                <p className="text-black/70">Software Engineer </p>
               </div>
             </div>
             
             <p className="text-lg text-black/70 mb-6 text-balance">
-              I'm a Web Developer / Software Engineer with a focus on creating clean, functional, and user-friendly websites and applications. With a passion for both design and development, I bridge the gap between aesthetics and functionality.
+              I'm a Software Engineer with a focus on creating clean, functional, and user-friendly websites and Web applications. With a passion for both design and development, I bridge the gap between aesthetics and functionality.
             </p>
             <p className="text-lg text-black/70 mb-8 text-balance">
               My approach to web development is centered around simplicity, usability, and performance. I believe that good design is invisible, and that the best websites are those that provide a seamless user experience.
