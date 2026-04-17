@@ -70,7 +70,7 @@ const projects: Project[] = [
     description:
       "A modern banking platform designed for rural banking in Ghana with comprehensive fraud protection features, secure authentication, and user-friendly interfaces. Includes multi-factor authentication, secure transaction processing, and advanced fraud monitoring.",
     image: "/abokobi-banking-login.png",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    tags: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://abokobi-banking.vercel.app/",
     icon: <ShieldCheck size={20} className="text-black/80" />,
   },
@@ -388,14 +388,13 @@ const Projects = () => {
       {projectList.map((project, index) => (
         <div
           key={project.id}
-          className={`glass rounded-2xl overflow-hidden hover-lift ${
-            isVisible
+          className={`glass rounded-2xl overflow-hidden hover-lift ${isVisible
               ? `opacity-100 animate-fade-in animate-fade-in-delay-${Math.min(
-                  animationOffset + index + 1,
-                  14
-                )}`
+                animationOffset + index + 1,
+                14
+              )}`
               : "opacity-0"
-          }`}
+            }`}
         >
           {Array.isArray(project.image) ? (
             <div className="aspect-video grid grid-cols-2 gap-1 overflow-hidden bg-gray-100">
@@ -464,9 +463,8 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className={`py-20 md:py-32 ${
-        isVisible ? "scroll-section visible" : "scroll-section"
-      }`}
+      className={`py-20 md:py-32 ${isVisible ? "scroll-section visible" : "scroll-section"
+        }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
