@@ -176,9 +176,9 @@ const projects: Project[] = [
   },
   {
     id: 13,
-    title: "Makarios Consult",
+    title: "Makarios Capital Group",
     description:
-      "A modern, responsive website for Makarios Consult - a professional business consulting firm specializing in operations, healthcare strategy, and brand development. Features modern design, responsive layout, Calendly integration, team profiles, contact forms, fast performance, SEO optimization, and social media meta tags.",
+      "A modern, responsive website for Makarios Capital Group - a professional business consulting firm specializing in operations, healthcare strategy, and brand development. Features modern design, responsive layout, Calendly integration, team profiles, contact forms, fast performance, SEO optimization, and social media meta tags.",
     image: "/makariocapital.png",
     tags: [
       "React 18",
