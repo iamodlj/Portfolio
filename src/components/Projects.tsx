@@ -389,11 +389,11 @@ const Projects = () => {
         <div
           key={project.id}
           className={`glass rounded-2xl overflow-hidden hover-lift ${isVisible
-              ? `opacity-100 animate-fade-in animate-fade-in-delay-${Math.min(
-                animationOffset + index + 1,
-                14
-              )}`
-              : "opacity-0"
+            ? `opacity-100 animate-fade-in animate-fade-in-delay-${Math.min(
+              animationOffset + index + 1,
+              14
+            )}`
+            : "opacity-0"
             }`}
         >
           {Array.isArray(project.image) ? (
@@ -472,7 +472,7 @@ const Projects = () => {
             <p className="text-sm font-medium text-black/70">My Work</p>
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-            Featured Projects
+            Projects
           </h2>
           <p className="text-lg text-black/70">
             A selection of my recent work, showcasing my skills in design and
