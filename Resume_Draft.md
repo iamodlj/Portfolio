@@ -7,7 +7,7 @@ Phone: +233208894620
 Email: ohenegyanfamily@gmail.com
 LinkedIn: linkedin.com/in/abraham-sackey-ohene-gyan-5b0682b8
 GitHub: https://github.com/iamodlj
-Portfolio: [Add your portfolio URL]
+Portfolio:https://asog.vercel.app/
 
 ## Professional Summary
 
@@ -28,7 +28,7 @@ Senior Full-Stack Software Engineer with hands-on experience building and deploy
 ### Senior Engineer
 
 Kamak Paperless, East Legon
-June 2025 - Present
+January 2025 - Present
 
 ### Full-Stack Engineer (Freelancer)
 
@@ -40,6 +40,11 @@ March 2023 - January 2025
 Ministry of Energy, Ghana
 July 2024 - August 2024
 
+### Senior Engineer / Founder
+
+ASOG DEV LTD, Accra, Ghana
+March 2021 - Present
+
 ## Selected Projects
 
 ### Church Management System
@@ -48,9 +53,9 @@ July 2024 - August 2024
 - Implemented role-based access control, structured data modules, and real-time workflows for attendance, finance, and reporting.
 - Delivered operational features including SMS broadcasting, equipment management, and admin dashboards.
 
-### ASOG POS Web App
+### ASOG POS Web App (SaaS)
 
-- Developed and deployed a live point-of-sale web application with secure sign-in and transaction workflows.
+- Developed and deployed a live SaaS point-of-sale web application with secure sign-in and transaction workflows.
 - Built clean frontend flows integrated with backend business logic to support reliable day-to-day operations.
 
 ### Voices To Vision Platform

@@ -240,9 +240,9 @@ const projects: Project[] = [
     id: 18,
     title: "ASOG POS Web App",
     description:
-      "A live POS web application with secure account sign-in, built for streamlined day-to-day business transactions and operations. Powered by Advanced Tech Business Solutions (ATBS).",
+      "A SaaS-based POS web application with secure account sign-in, built for streamlined day-to-day business transactions and operations. Powered by Advanced Tech Business Solutions (ATBS).",
     image: "/pos.PNG",
-    tags: ["Web App", "POS", "Live"],
+    tags: ["SaaS", "Web App", "POS", "Live"],
     link: "https://asog-pos.vercel.app/",
     icon: <Monitor size={20} className="text-black/80" />,
   },
