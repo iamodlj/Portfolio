@@ -11,7 +11,7 @@ Portfolio:https://asog.vercel.app/
 
 ## Professional Summary
 
-Senior Full-Stack Software Engineer with hands-on experience building and deploying production web applications across frontend, backend, and database layers. Proficient in React, TypeScript, Node.js, Express, Supabase, and PostgreSQL, with strong delivery focus on secure authentication, role-based access control, responsive UI, and scalable API-driven architecture. Built solutions across fintech, healthcare, education, e-commerce, and nonprofit domains.
+Software Engineer with hands-on experience building and deploying production web applications across frontend, backend, and database layers. Proficient in React, TypeScript, Node.js, Express, Supabase, and PostgreSQL, with strong delivery focus on secure authentication, role-based access control, responsive UI, and scalable API-driven architecture. Built solutions across fintech, healthcare, education, e-commerce, and nonprofit domains.
 
 ## Core Skills
 
