@@ -96,6 +96,7 @@ const projects: Project[] = [
     link: "https://github.com/iamodlj/",
     icon: <Sprout size={20} className="text-black/80" />,
   },
+/*
   {
     id: 6,
     title: "Website for PrimeTech",
@@ -107,6 +108,7 @@ const projects: Project[] = [
     link: "https://iamodlj.github.io/PrimeTech/",
     icon: <Monitor size={20} className="text-black/80" />,
   },
+*/
   {
     id: 7,
     title: "Personal Portfolio",
@@ -136,6 +138,7 @@ const projects: Project[] = [
     link: "https://tic-tac-toc-taupe.vercel.app/",
     icon: <Code size={20} className="text-black/80" />,
   },
+/*
   {
     id: 10,
     title: "Kool Hib",
@@ -146,6 +149,7 @@ const projects: Project[] = [
     link: "https://kool-hib.vercel.app/",
     icon: <Wine size={20} className="text-black/80" />,
   },
+*/
   {
     id: 11,
     title: "Luna Essence Spa",
@@ -298,7 +302,7 @@ const liveProjectIds = [
   16, // Lingua.care
   14, // Mount Sinai Home Healthcare Services Inc
   15, // Elite Health Solutions Inc.
-  10, // Kool Hib
+//  10, // Kool Hib
   0, // Clapes Department
   22, // Averra Study Web App
   17, // Orphanage Care Management System
@@ -306,7 +310,7 @@ const liveProjectIds = [
   1, // Calculator App
   9, // TicTacToe Game
   8, // Weather Dashboard
-  6, // Website for PrimeTech
+//  6, // Website for PrimeTech
   7, // Personal Portfolio
 ];
 

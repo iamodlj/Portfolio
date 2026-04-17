@@ -159,7 +159,7 @@ const About = () => {
             </div>
             
             <p className="text-lg text-black/70 mb-6 text-balance">
-              I'm a Senior Software Engineer with a focus on creating clean, functional, and user-friendly websites, Web applications and Mobile applications. With a passion for both design and development, I bridge the gap between aesthetics and functionality.
+              I'm a CTO and Senior Software Engineer with a focus on creating clean, functional, and user-friendly websites, Web applications and Mobile applications. With a passion for both design and development, I bridge the gap between aesthetics and functionality.
             </p>
             <p className="text-lg text-black/70 mb-8 text-balance">
               My approach to web development is centered around simplicity, usability, and performance. I believe that good design is invisible, and that the best websites are those that provide a seamless user experience.

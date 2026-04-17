@@ -1,6 +1,6 @@
 # Abraham Sackey Ohene Gyan (ASOG)
 
-Senior Full-Stack Software Engineer
+CTO & Senior Full-Stack Software Engineer
 
 Address: P.O. Box GP 1315, Osu-Accra, Ghana
 Phone: +233208894620
@@ -24,6 +24,11 @@ Software Engineer with hands-on experience building and deploying production web
 - Other: Responsive Design, UI/UX Implementation, SEO Optimization, Accessibility
 
 ## Experience
+
+### CTO
+
+Eunoia Trade Africa
+November 2025 - Present
 
 ### Senior Engineer
 

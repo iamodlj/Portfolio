@@ -6,7 +6,7 @@ My professional portfolio showcasing various web development projects.
 - **Clapes Department**: E-commerce website for a clothing brand
 - **Abokobi Secure Banking Shield**: Modern banking platform for rural banking in Ghana
 - **TicTacToe Game**: Classic game with both Player vs Player and AI modes
-- **Kool Hib**: E-commerce platform for a premium hibiscus-based beverage brand
+
 - **Calculator App**
 
 ## Technology Stack
