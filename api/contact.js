@@ -75,6 +75,12 @@ export default async function handler(req, res) {
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'techwiththefather@gmail.com';
     const fromEmail = process.env.FROM_EMAIL || smtpUser;
 
+    // MNotify SMS Config
+    const mnotifyApiKey = process.env.MNOTIFY_API_KEY || process.env.VITE_MNOTIFY_API_KEY;
+    const mnotifySenderId = process.env.MNOTIFY_SENDER_ID || process.env.VITE_MNOTIFY_SENDER_ID || 'UPSA-SCMS';
+    const mnotifyRecipient = process.env.MNOTIFY_RECIPIENT_PHONE || '+233554339489';
+    const mnotifyBaseUrl = process.env.VITE_MNOTIFY_BASE_URL || 'https://api.mnotify.com';
+
     if (!smtpHost || !smtpUser || !smtpPass) {
       throw new Error('SMTP credentials not configured');
     }
@@ -88,7 +94,8 @@ export default async function handler(req, res) {
         pass: smtpPass,
       },
       tls: {
-        ciphers: 'SSLv3'
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
       }
     });
 
@@ -115,16 +122,72 @@ export default async function handler(req, res) {
     };
 
     // Send email
-    const info = await transporter.sendMail(mailOptions);
+    let emailSent = false;
+    let emailMessageId = null;
+    let emailError = null;
 
-    // Ensure CORS headers are present on the final response as well
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', origin === 'null' ? '*' : origin);
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      emailSent = true;
+      emailMessageId = info.messageId;
+    } catch (err) {
+      console.error('Email sending failed:', err);
+      emailError = err instanceof Error ? err.message : 'Unknown email error';
+    }
 
-    res.status(200).json({
-      message: 'Email sent successfully',
-      messageId: info.messageId
-    });
+    // Send SMS via MNotify (Optional/Best Effort)
+    let smsSent = false;
+    let smsError = null;
+
+    if (mnotifyApiKey && mnotifyRecipient) {
+      try {
+        // Updated SMS format with full content labels
+        const smsMessage = `Portfolio website Msg from \nName: ${name}\nEmail: ${email}\nMsg: ${message}`;
+        const smsEndpoint = `${mnotifyBaseUrl}/api/sms/quick?key=${mnotifyApiKey}`;
+        
+        const smsResponse = await fetch(smsEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            recipient: [mnotifyRecipient],
+            sender: mnotifySenderId,
+            message: smsMessage,
+            is_schedule: false
+          }),
+        });
+        
+        const smsData = await smsResponse.json();
+        smsSent = smsResponse.ok && smsData.status === 'success';
+        if (!smsSent) {
+          smsError = smsData.message || 'Unknown SMS API error';
+        }
+      } catch (err) {
+        console.error('SMS sending failed:', err);
+        smsError = err instanceof Error ? err.message : 'Unknown error during SMS fetch';
+      }
+    }
+
+    // Check if at least one service succeeded
+    if (emailSent || smsSent) {
+      // Ensure CORS headers are present on the final response as well
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+      res.setHeader('Access-Control-Allow-Origin', origin === 'null' ? '*' : origin);
+
+      return res.status(200).json({
+        message: emailSent ? 'Email sent successfully' : 'SMS sent successfully (email failed)',
+        email: {
+          sent: emailSent,
+          messageId: emailMessageId,
+          error: emailError
+        },
+        sms: {
+          sent: smsSent,
+          error: smsError
+        }
+      });
+    } else {
+      throw new Error(`Both Email and SMS failed. Email: ${emailError}, SMS: ${smsError}`);
+    }
 
   } catch (error) {
     // Ensure CORS headers are present on error responses too
