@@ -162,7 +162,7 @@ const About = () => {
               I'm a Software Engineer with a focus on creating clean, functional, and user-friendly websites, Web applications and Mobile applications. With a passion for both design and development, I bridge the gap between aesthetics and functionality.
             </p>
             <p className="text-lg text-black/70 mb-8 text-balance">
-              My approach to web development and software engineering is centered around simplicity, usability, and performance. I believe that good design is invisible, and that the best websites are those that provide a seamless user experience.
+              My approach to web development and software engineering is centered around simplicity, usability, and performance. I believe that good design is invisible, and that the best websites, web applications and mobile applications are those that provide a seamless user experience.
             </p>
             
             <div className="flex flex-wrap gap-4">
