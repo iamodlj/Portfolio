@@ -48,7 +48,7 @@ const projects: Project[] = [
     id: 2,
     title: "Web-Based Ghana Vehicle Check",
     description:
-      "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks. Serving as my final year project in the university - UPSA",
+      "Created a platform bridging the gap between DVLA and Ghana Police Serive(MTTD) allowing law enforcement to verify vehicle registration and ownership data. Integrated a backend system to flag stolen vehicles during traffic checks.",
     image:
       "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
     tags: [
@@ -96,19 +96,19 @@ const projects: Project[] = [
     link: "https://github.com/iamodlj/",
     icon: <Sprout size={20} className="text-black/80" />,
   },
-/*
-  {
-    id: 6,
-    title: "Website for PrimeTech",
-    description:
-      "A responsive, modern website developed for PrimeTech showcasing their services and products.",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop",
-    tags: ["HTML", "CSS", "JavaScript", "Git"],
-    link: "https://iamodlj.github.io/PrimeTech/",
-    icon: <Monitor size={20} className="text-black/80" />,
-  },
-*/
+  /*
+    {
+      id: 6,
+      title: "Website for PrimeTech",
+      description:
+        "A responsive, modern website developed for PrimeTech showcasing their services and products.",
+      image:
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop",
+      tags: ["HTML", "CSS", "JavaScript", "Git"],
+      link: "https://iamodlj.github.io/PrimeTech/",
+      icon: <Monitor size={20} className="text-black/80" />,
+    },
+  */
   {
     id: 7,
     title: "Personal Portfolio",
@@ -138,18 +138,18 @@ const projects: Project[] = [
     link: "https://tic-tac-toc-taupe.vercel.app/",
     icon: <Code size={20} className="text-black/80" />,
   },
-/*
-  {
-    id: 10,
-    title: "Kool Hib",
-    description:
-      "An e-commerce platform for a premium hibiscus-based beverage brand based in Accra, Ghana. Features include product catalog, shopping cart functionality, responsive design, blog section, and SEO optimization for their line of premium juices.",
-    image: "/kool_hib_preview.png",
-    tags: ["React", "Vite", "Tailwind CSS", "Framer Motion", "React Router"],
-    link: "https://kool-hib.vercel.app/",
-    icon: <Wine size={20} className="text-black/80" />,
-  },
-*/
+  /*
+    {
+      id: 10,
+      title: "Kool Hib",
+      description:
+        "An e-commerce platform for a premium hibiscus-based beverage brand based in Accra, Ghana. Features include product catalog, shopping cart functionality, responsive design, blog section, and SEO optimization for their line of premium juices.",
+      image: "/kool_hib_preview.png",
+      tags: ["React", "Vite", "Tailwind CSS", "Framer Motion", "React Router"],
+      link: "https://kool-hib.vercel.app/",
+      icon: <Wine size={20} className="text-black/80" />,
+    },
+  */
   {
     id: 11,
     title: "Luna Essence Spa",
@@ -302,7 +302,7 @@ const liveProjectIds = [
   16, // Lingua.care
   14, // Mount Sinai Home Healthcare Services Inc
   15, // Elite Health Solutions Inc.
-//  10, // Kool Hib
+  //  10, // Kool Hib
   0, // Clapes Department
   22, // Averra Study Web App
   17, // Orphanage Care Management System
@@ -310,7 +310,7 @@ const liveProjectIds = [
   1, // Calculator App
   9, // TicTacToe Game
   8, // Weather Dashboard
-//  6, // Website for PrimeTech
+  //  6, // Website for PrimeTech
   7, // Personal Portfolio
 ];
 
