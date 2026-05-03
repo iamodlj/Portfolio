@@ -290,9 +290,20 @@ const projects: Project[] = [
     link: "https://averrastudy.vercel.app/",
     icon: <Monitor size={20} className="text-black/80" />,
   },
+  {
+    id: 23,
+    title: "Makarios Social Impact",
+    description:
+      "A social impact platform empowering persons with disabilities, families, and communities across Africa and the Diaspora. Features an accessible modern design, dynamic UI components, secure email contact forms via Nodemailer, and Vercel Analytics integration.",
+    image: "/makarios_social.png",
+    tags: ["React", "TypeScript", "CSS"],
+    link: "https://makariossocialimpact.org",
+    icon: <Sprout size={20} className="text-black/80" />,
+  },
 ];
 
 const liveProjectIds = [
+  23, // Makarios Social Impact
   12, // Church Management System
   18, // ASOG POS Web App
   20, // Cescars Website & CMS
