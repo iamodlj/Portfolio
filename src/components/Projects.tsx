@@ -300,9 +300,20 @@ const projects: Project[] = [
     link: "https://makariossocialimpact.org",
     icon: <Sprout size={20} className="text-black/80" />,
   },
+  {
+    id: 24,
+    title: "Seyram Photography Portfolio",
+    description:
+      "A premium photography and visual arts portfolio for Desmond F. Seyram, a Ghanaian photographer and creative director. Features architectural, portrait, commercial, and landscape photography with a distinctive artistic vision, built with a modern responsive UI.",
+    image: "/seyram_portfolio.png",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    link: "https://seyram-09.vercel.app/",
+    icon: <Monitor size={20} className="text-black/80" />,
+  },
 ];
 
 const liveProjectIds = [
+  24, // Seyram Photography Portfolio
   23, // Makarios Social Impact
   12, // Church Management System
   18, // ASOG POS Web App
