@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import Index from "./pages/Index";
+import Blank from "./pages/Blank";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Blank />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
