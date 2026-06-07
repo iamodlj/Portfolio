@@ -5,6 +5,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  14%       { transform: scale(1.5); opacity: 0.9; }
+  28%       { transform: scale(1); opacity: 1; }
+  42%       { transform: scale(1.35); opacity: 0.85; }
+  70%       { transform: scale(1); opacity: 1; }
+}
+
+.dot-alive {
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
